@@ -3,7 +3,6 @@
 FROM gcc:12.3.0 AS build-env
 WORKDIR /app
 RUN curl -fsSL https://xmake.io/shget.text | bash
-COPY scripts/pac.lua ~/.xmake
 RUN curl https://www.google.com/generate_204 \
  || ~/.local/bin/xmake g --proxy_pac=github_mirror.lua --root
 COPY . .
